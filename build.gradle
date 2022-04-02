@@ -13,11 +13,35 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
+enum VersionStatus {
+    alpha, beta, release
+
+    @Override
+    String toString() {
+        switch (this) {
+            case alpha: return "α"
+            case beta: return "β"
+            case release: return "R"
+        }
+    }
+}
+
 compileJava.options.encoding("UTF-8")
 compileTestJava.options.encoding("UTF-8")
-version = '1.0'
-group = 'com.alrexu.lockon' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'modid'
+def config = [ //https://mcforge.readthedocs.io/en/latest/conventions/versioning/
+               mc_version   : '1.16.5',//supported minimum Minecraft version
+               major_mod    : '1',//Removing items, blocks, tile entities, etc.
+               major_api    : '0',//Changing the order or variables of enums. etc
+               minor        : '0',//Adding items, blocks, tile entities, etc.
+               patch        : '0',//bugfix
+               forge_version: '1.16.5-36.2.20',
+               versionStatus: VersionStatus.beta
+]
+
+//Version Format (McVersion-MajorMOD.MajorAPI.Minor.Patch-VersionStatus)
+version = "${config.mc_version}-${config.major_mod}.${config.major_api}.${config.minor}.${config.patch}-${config.versionStatus.toString()}"
+group = 'com.alrexu.lockon'
+archivesBaseName = 'lockon'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -92,7 +116,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.20'
+    minecraft "net.minecraftforge:forge:${config.forge_version}"
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
