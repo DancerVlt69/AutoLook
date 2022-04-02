@@ -1,0 +1,11 @@
+{
+  "key.categories.lockon": "Lock On",
+  "key.lockon.aim": "Aim",
+  "key.lockon.set": "Lock On",
+  "lockon.text.name": "Name",
+  "lockon.text.pos.x": "X",
+  "lockon.text.pos.y": "Y",
+  "lockon.text.pos.z": "Z",
+  "lockon.text.health": "HP",
+  "lockon.text.item.size": "Item Count"
+}
