@@ -1,5 +1,5 @@
-![Lock On](./src/main/resources/autolook_logo.png)
+![LOGO](./src/main/resources/autolook_logo.png)
 
-# LockOn
+# Auto Look
 
 A Minecraft Forge Mod for auto aiming
