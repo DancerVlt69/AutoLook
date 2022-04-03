@@ -21,6 +21,10 @@ public class KeyBindings {
 		return setLockKeyBinding;
 	}
 
+	public static KeyBinding getShiftKeyBinding() {
+		return settings.keyShift;
+	}
+
 	@SubscribeEvent
 	public static void register(FMLClientSetupEvent event) {
 		ClientRegistry.registerKeyBinding(aimKeyBinding);

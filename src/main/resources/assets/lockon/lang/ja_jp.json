@@ -7,5 +7,8 @@
   "lockon.text.pos.y": "Y",
   "lockon.text.pos.z": "Z",
   "lockon.text.health": "HP",
-  "lockon.text.item.size": "アイテム数"
+  "lockon.text.item.size": "アイテム数",
+  "lockon.message.locked": "§cロックオン",
+  "lockon.message.cancel.aim": "§c視線追従停止",
+  "lockon.message.remove.aim": "§c全ての照準を削除"
 }

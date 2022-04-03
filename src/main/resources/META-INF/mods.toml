@@ -5,9 +5,9 @@ issueTrackerURL = "https://github.com/alRex-U/LockOn/issues" #optional
 [[mods]] #mandatory
 modId = "lockon" #mandatory
 version = "${file.jarVersion}" #mandatory
-displayName = "Lock<*>On" #mandatory
+displayName = "Lock ⨁n" #mandatory
 displayURL = "https://github.com/alRex-U/LockOn" #optional
-logoFile = "../lockon_logo.png" #optional
+logoFile = "lockon_logo.png" #optional
 credits = "Thanks for Minecraft, Java and Forge developpers" #optional
 authors = "alRex_U" #optional
 description = '''

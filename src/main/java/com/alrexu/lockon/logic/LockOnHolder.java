@@ -54,6 +54,10 @@ public class LockOnHolder {
 		lockOnList = new LinkedList<>();
 	}
 
+	public void removeAim() {
+		lookedAim = null;
+	}
+
 	public void tick() {
 		ListIterator<Pair<LockOn, AimRenderer>> iterator = lockOnList.listIterator();
 		while (iterator.hasNext()) {
