@@ -1,6 +1,6 @@
-package com.alrexu.lockon.logic;
+package com.alrexu.autolook.logic;
 
-import com.alrexu.lockon.render.aim.AimRenderer;
+import com.alrexu.autolook.render.aim.AimRenderer;
 import com.mojang.datafixers.util.Pair;
 
 import javax.annotation.Nullable;

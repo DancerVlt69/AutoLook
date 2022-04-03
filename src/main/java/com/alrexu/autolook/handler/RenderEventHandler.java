@@ -1,10 +1,10 @@
-package com.alrexu.lockon.handler;
+package com.alrexu.autolook.handler;
 
-import com.alrexu.lockon.logic.LockOn;
-import com.alrexu.lockon.logic.LockOnHolder;
-import com.alrexu.lockon.render.aim.AimRenderer;
-import com.alrexu.lockon.render.hud.InformationHUD;
-import com.alrexu.lockon.utils.PlayerUtils;
+import com.alrexu.autolook.logic.LockOn;
+import com.alrexu.autolook.logic.LockOnHolder;
+import com.alrexu.autolook.render.aim.AimRenderer;
+import com.alrexu.autolook.render.hud.InformationHUD;
+import com.alrexu.autolook.utils.PlayerUtils;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;

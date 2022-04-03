@@ -1,4 +1,4 @@
-package com.alrexu.lockon.logic;
+package com.alrexu.autolook.logic;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;

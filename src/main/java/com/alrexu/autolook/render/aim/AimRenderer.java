@@ -1,8 +1,8 @@
-package com.alrexu.lockon.render.aim;
+package com.alrexu.autolook.render.aim;
 
-import com.alrexu.lockon.logic.LockOn;
-import com.alrexu.lockon.render.type.RenderTypes;
-import com.alrexu.lockon.utils.VectorUtils;
+import com.alrexu.autolook.logic.LockOn;
+import com.alrexu.autolook.render.type.RenderTypes;
+import com.alrexu.autolook.utils.VectorUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.Minecraft;
@@ -17,7 +17,7 @@ import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 
 public class AimRenderer {
-	public static ResourceLocation AIM = new ResourceLocation("lockon", "textures/sprite/aim.png");
+	public static ResourceLocation AIM = new ResourceLocation("autolook", "textures/sprite/aim.png");
 	private final LockOn lockOn;
 	private boolean removed = false;
 	private int tick = 0;

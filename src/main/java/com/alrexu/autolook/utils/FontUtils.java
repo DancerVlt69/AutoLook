@@ -1,4 +1,4 @@
-package com.alrexu.lockon.utils;
+package com.alrexu.autolook.utils;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;

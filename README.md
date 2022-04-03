@@ -1,4 +1,4 @@
-![Lock On](./src/main/resources/lockon_logo.png)
+![Lock On](./src/main/resources/autolook_logo.png)
 
 # LockOn
 

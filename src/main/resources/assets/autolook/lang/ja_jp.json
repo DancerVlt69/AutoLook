@@ -1,0 +1,14 @@
+{
+  "key.categories.autolook": "オートルック",
+  "key.autolook.aim": "ロックオン",
+  "key.autolook.set": "照準",
+  "autolook.text.name": "名前",
+  "autolook.text.pos.x": "X",
+  "autolook.text.pos.y": "Y",
+  "autolook.text.pos.z": "Z",
+  "autolook.text.health": "HP",
+  "autolook.text.item.size": "アイテム数",
+  "autolook.message.locked": "§cロックオン",
+  "autolook.message.cancel.aim": "§c視線追従停止",
+  "autolook.message.remove.aim": "§c全ての照準を削除"
+}

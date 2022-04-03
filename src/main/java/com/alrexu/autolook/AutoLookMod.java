@@ -1,10 +1,10 @@
-package com.alrexu.lockon;
+package com.alrexu.autolook;
 
-import com.alrexu.lockon.handler.RenderEventHandler;
-import com.alrexu.lockon.handler.TickEventHandler;
-import com.alrexu.lockon.input.KeyBindings;
-import com.alrexu.lockon.input.KeyRecorder;
-import com.alrexu.lockon.logic.LockOnMode;
+import com.alrexu.autolook.handler.RenderEventHandler;
+import com.alrexu.autolook.handler.TickEventHandler;
+import com.alrexu.autolook.input.KeyBindings;
+import com.alrexu.autolook.input.KeyRecorder;
+import com.alrexu.autolook.logic.LockOnMode;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -19,9 +19,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-@Mod(LockOnMod.MOD_ID)
-public class LockOnMod {
-    public static final String MOD_ID = "lockon";
+@Mod(AutoLookMod.MOD_ID)
+public class AutoLookMod {
+    public static final String MOD_ID = "autolook";
     private static final Logger LOGGER = LogManager.getLogger();
     private static LockOnMode targetMode = LockOnMode.AllEntities;
 
@@ -33,7 +33,7 @@ public class LockOnMod {
         targetMode = mode;
     }
 
-    public LockOnMod() {
+    public AutoLookMod() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);

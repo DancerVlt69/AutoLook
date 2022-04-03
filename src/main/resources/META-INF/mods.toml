@@ -3,18 +3,18 @@ loaderVersion = "[32,)" #mandatory This is typically bumped every Minecraft vers
 license = "GNU General Public License v3.0"
 issueTrackerURL = "https://github.com/alRex-U/LockOn/issues" #optional
 [[mods]] #mandatory
-modId = "lockon" #mandatory
+modId = "autolook" #mandatory
 version = "${file.jarVersion}" #mandatory
-displayName = "Lock ⨁n" #mandatory
+displayName = "Auto Look" #mandatory
 displayURL = "https://github.com/alRex-U/LockOn" #optional
-logoFile = "lockon_logo.png" #optional
+logoFile = "autolook_logo.png" #optional
 credits = "Thanks for Minecraft, Java and Forge developpers" #optional
 authors = "alRex_U" #optional
 description = '''
 This allows players to lock-on entities or points
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.lockon]] #optional
+[[dependencies.autolook]] #optional
 modId = "forge" #mandatory
 mandatory = true #mandatory
 versionRange = "[32,)" #mandatory
@@ -22,7 +22,7 @@ ordering = "NONE"
 # Side this dependency is applied on - BOTH, CLIENT or SERVER
 side = "CLIENT"
 # Here's another dependency
-[[dependencies.lockon]]
+[[dependencies.autolook]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.16.5,1.17)"

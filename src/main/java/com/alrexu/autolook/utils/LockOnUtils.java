@@ -1,7 +1,7 @@
-package com.alrexu.lockon.utils;
+package com.alrexu.autolook.utils;
 
 
-import com.alrexu.lockon.logic.LockOnMode;
+import com.alrexu.autolook.logic.LockOnMode;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;

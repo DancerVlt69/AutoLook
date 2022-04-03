@@ -1,0 +1,14 @@
+{
+  "key.categories.autolook": "Auto Look",
+  "key.autolook.aim": "Aim",
+  "key.autolook.set": "Lock On",
+  "autolook.text.name": "Name",
+  "autolook.text.pos.x": "X",
+  "autolook.text.pos.y": "Y",
+  "autolook.text.pos.z": "Z",
+  "autolook.text.health": "HP",
+  "autolook.text.item.size": "Item Count",
+  "autolook.message.locked": "§cLock On",
+  "autolook.message.cancel.aim": "§cCanceled Aiming",
+  "autolook.message.remove.aim": "§cRemoved All Aims"
+}

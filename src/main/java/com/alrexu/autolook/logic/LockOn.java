@@ -1,6 +1,6 @@
-package com.alrexu.lockon.logic;
+package com.alrexu.autolook.logic;
 
-import com.alrexu.lockon.utils.EntityUtils;
+import com.alrexu.autolook.utils.EntityUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.util.math.vector.Vector3d;

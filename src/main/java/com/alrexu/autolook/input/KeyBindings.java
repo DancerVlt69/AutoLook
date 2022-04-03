@@ -1,4 +1,4 @@
-package com.alrexu.lockon.input;
+package com.alrexu.autolook.input;
 
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
@@ -9,8 +9,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.lwjgl.glfw.GLFW;
 
 public class KeyBindings {
-	private static final KeyBinding aimKeyBinding = new KeyBinding("key.lockon.aim", GLFW.GLFW_KEY_N, "key.categories.lockon");
-	private static final KeyBinding setLockKeyBinding = new KeyBinding("key.lockon.set", GLFW.GLFW_KEY_M, "key.categories.lockon");
+	private static final KeyBinding aimKeyBinding = new KeyBinding("key.autolook.aim", GLFW.GLFW_KEY_N, "key.categories.autolook");
+	private static final KeyBinding setLockKeyBinding = new KeyBinding("key.autolook.set", GLFW.GLFW_KEY_M, "key.categories.autolook");
 	private static final GameSettings settings = Minecraft.getInstance().options;
 
 	public static KeyBinding getAimKeyBinding() {

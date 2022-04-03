@@ -40,8 +40,8 @@ def config = [ //https://mcforge.readthedocs.io/en/latest/conventions/versioning
 
 //Version Format (McVersion-MajorMOD.MajorAPI.Minor.Patch-VersionStatus)
 version = "${config.mc_version}-${config.major_mod}.${config.major_api}.${config.minor}.${config.patch}-${config.versionStatus.toString()}"
-group = 'com.alrexu.lockon'
-archivesBaseName = 'lockon'
+group = 'com.alrexu.autolook'
+archivesBaseName = 'autolook'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 

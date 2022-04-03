@@ -1,7 +1,7 @@
-package com.alrexu.lockon.render.hud;
+package com.alrexu.autolook.render.hud;
 
-import com.alrexu.lockon.logic.LockOn;
-import com.alrexu.lockon.render.aim.AimRenderer;
+import com.alrexu.autolook.logic.LockOn;
+import com.alrexu.autolook.render.aim.AimRenderer;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.MainWindow;
 import net.minecraft.client.Minecraft;
@@ -35,19 +35,19 @@ public class InformationHUD extends AbstractGui {
 
 		Entity entity = lockOn.getTargetEntity();
 		if (entity != null) {
-			content.add(String.format("%s : §3%s", I18n.get("lockon.text.name"), entity.getDisplayName().getString()));
+			content.add(String.format("%s : §3%s", I18n.get("autolook.text.name"), entity.getDisplayName().getString()));
 		}
 		if (entity instanceof LivingEntity) {
 			LivingEntity living = (LivingEntity) entity;
 			String textColor = living.isDeadOrDying() ? "§4" : (living.getHealth() / living.getMaxHealth() <= 0.5) ? "§6" : "§2";
-			content.add(String.format("%s : %s%4d/%4d", I18n.get("lockon.text.health"), textColor, (int) Math.round(living.getHealth()), (int) Math.round(living.getMaxHealth())));
+			content.add(String.format("%s : %s%4d/%4d", I18n.get("autolook.text.health"), textColor, (int) Math.round(living.getHealth()), (int) Math.round(living.getMaxHealth())));
 		} else if (entity instanceof ItemEntity) {
 			ItemEntity item = (ItemEntity) entity;
-			content.add(String.format("%s : §2%4d", I18n.get("lockon.text.item.size"), item.getItem().getCount()));
+			content.add(String.format("%s : §2%4d", I18n.get("autolook.text.item.size"), item.getItem().getCount()));
 		}
-		content.add(String.format("%s : §b%7f", I18n.get("lockon.text.pos.x"), pos.x()));
-		content.add(String.format("%s : §b%7f", I18n.get("lockon.text.pos.y"), pos.y()));
-		content.add(String.format("%s : §b%7f", I18n.get("lockon.text.pos.z"), pos.z()));
+		content.add(String.format("%s : §b%7f", I18n.get("autolook.text.pos.x"), pos.x()));
+		content.add(String.format("%s : §b%7f", I18n.get("autolook.text.pos.y"), pos.y()));
+		content.add(String.format("%s : §b%7f", I18n.get("autolook.text.pos.z"), pos.z()));
 
 		final int boxWidth = Math.max(width / 4, 10 + content.stream().map(font::width).max(Integer::compareTo).orElse(0));
 		final int left;

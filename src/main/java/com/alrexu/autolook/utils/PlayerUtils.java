@@ -1,4 +1,4 @@
-package com.alrexu.lockon.utils;
+package com.alrexu.autolook.utils;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.vector.Vector3d;

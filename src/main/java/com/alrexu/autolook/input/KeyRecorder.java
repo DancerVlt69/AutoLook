@@ -1,4 +1,4 @@
-package com.alrexu.lockon.input;
+package com.alrexu.autolook.input;
 
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.event.TickEvent;

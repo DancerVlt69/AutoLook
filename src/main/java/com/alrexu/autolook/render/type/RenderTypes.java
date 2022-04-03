@@ -1,6 +1,6 @@
-package com.alrexu.lockon.render.type;
+package com.alrexu.autolook.render.type;
 
-import com.alrexu.lockon.render.aim.AimRenderer;
+import com.alrexu.autolook.render.aim.AimRenderer;
 import net.minecraft.client.renderer.RenderState;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
