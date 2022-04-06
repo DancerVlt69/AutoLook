@@ -58,7 +58,7 @@ public class LockOn {
 	public Vector3d getPoint(float partialTick) {
 		if (targetEntity != null) {
 			if (targetEntity instanceof ItemEntity) {
-				return targetEntity.position().add(0, 0.3, 0);
+				return targetEntity.position().add(0, 0.4, 0);
 			} else return EntityUtils.getCenterBoundingBox(targetEntity, partialTick);
 		}
 		if (targetPoint != null) return targetPoint;

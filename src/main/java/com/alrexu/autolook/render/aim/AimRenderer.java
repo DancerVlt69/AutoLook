@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.util.math.vector.Vector3d;
@@ -17,7 +18,9 @@ import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 
 public class AimRenderer {
-	public static ResourceLocation AIM = new ResourceLocation("autolook", "textures/sprite/aim.png");
+	public static ResourceLocation AIM_ENTITY = new ResourceLocation("autolook", "textures/sprite/aim_entity.png");
+	public static ResourceLocation AIM_ITEM = new ResourceLocation("autolook", "textures/sprite/aim_item.png");
+	public static ResourceLocation AIM_POINT = new ResourceLocation("autolook", "textures/sprite/aim_point.png");
 	private final LockOn lockOn;
 	private boolean removed = false;
 	private int tick = 0;
@@ -52,17 +55,21 @@ public class AimRenderer {
 		Minecraft mc = Minecraft.getInstance();
 		MatrixStack stack = event.getMatrixStack();
 
+		RenderType renderType;
 		float scale;
-		if (lockOn.isTargetingPoint()) scale = 1;
-		else if (lockOn.isTargetingEntity()) {
+		if (lockOn.isTargetingPoint()) {
+			scale = 0.4f;
+			renderType = RenderTypes.AIM_POINT;
+		} else if (lockOn.isTargetingEntity()) {
 			Entity entity = lockOn.getTargetEntity();
 			scale = Math.max(entity.getBbHeight(), entity.getBbWidth());
+			renderType = entity instanceof ItemEntity ? RenderTypes.AIM_ITEM : RenderTypes.AIM_ENTITY;
 		} else return;
 		scale /= 1.1;
 		if (tick < 5) scale *= (5.25 - (tick + event.getPartialTicks())) * 4;
 
 		IRenderTypeBuffer.Impl bufferAim = mc.renderBuffers().bufferSource();
-		IVertexBuilder builderAim = bufferAim.getBuffer(RenderTypes.AIM);
+		IVertexBuilder builderAim = bufferAim.getBuffer(renderType);
 
 		ActiveRenderInfo camera = mc.gameRenderer.getMainCamera();
 		Vector3d camPos = camera.getPosition();
