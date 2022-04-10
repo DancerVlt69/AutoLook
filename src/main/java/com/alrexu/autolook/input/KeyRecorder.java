@@ -6,14 +6,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class KeyRecorder {
 	public static final KeyState keyAimState = new KeyState();
-	public static final KeyState keySetLockState = new KeyState();
+	public static final KeyState keyAutoLockState = new KeyState();
 
 	@SubscribeEvent
 	public void onClientTick(TickEvent.ClientTickEvent event) {
 		if (event.phase != TickEvent.Phase.START) return;
 
 		keyAimState.record(KeyBindings.getAimKeyBinding());
-		keySetLockState.record(KeyBindings.getSetLockKeyBinding());
+		keyAutoLockState.record(KeyBindings.getAutoLockToggleBinding());
 	}
 
 	public static class KeyState {

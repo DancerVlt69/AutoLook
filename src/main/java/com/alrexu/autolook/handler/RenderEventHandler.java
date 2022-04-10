@@ -21,13 +21,18 @@ public class RenderEventHandler {
 	public void onRender(TickEvent.RenderTickEvent event) {
 		PlayerEntity player = Minecraft.getInstance().player;
 		if (player == null) return;
-		Pair<LockOn, AimRenderer> aim = LockOnHolder.getInstance().getLookedAim();
+		LockOnHolder holder = LockOnHolder.getInstance();
+		Pair<LockOn, AimRenderer> aim = holder.getLookedAim();
 		if (aim == null) return;
 
 		LockOn lockOn = aim.getFirst();
 		Vector3d vec = lockOn.getPoint(event.renderTickTime);
 		if (vec == null) return;
-		PlayerUtils.faceTo(player, vec, event.renderTickTime);
+		if (holder.getLookingTick() < 10) {
+			PlayerUtils.smoothlyFaceTo(player, vec, event.renderTickTime);
+		} else {
+			PlayerUtils.faceTo(player, vec, event.renderTickTime);
+		}
 	}
 
 	@SubscribeEvent

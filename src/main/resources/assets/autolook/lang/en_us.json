@@ -1,7 +1,7 @@
 {
   "key.categories.autolook": "Auto Look",
   "key.autolook.aim": "Aim",
-  "key.autolook.set": "Lock On",
+  "key.autolook.autolock": "Auto Lock",
   "autolook.text.name": "Name",
   "autolook.text.pos.x": "X",
   "autolook.text.pos.y": "Y",

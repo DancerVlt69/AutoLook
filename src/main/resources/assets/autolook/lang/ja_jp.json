@@ -1,7 +1,7 @@
 {
   "key.categories.autolook": "オートルック",
   "key.autolook.aim": "ロックオン",
-  "key.autolook.set": "照準",
+  "key.autolook.autolock": "オートロック",
   "autolook.text.name": "名前",
   "autolook.text.pos.x": "X",
   "autolook.text.pos.y": "Y",

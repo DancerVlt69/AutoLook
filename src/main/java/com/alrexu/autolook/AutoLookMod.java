@@ -4,6 +4,7 @@ import com.alrexu.autolook.handler.RenderEventHandler;
 import com.alrexu.autolook.handler.TickEventHandler;
 import com.alrexu.autolook.input.KeyBindings;
 import com.alrexu.autolook.input.KeyRecorder;
+import com.alrexu.autolook.input.MouseRecorder;
 import com.alrexu.autolook.logic.LockOnMode;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,29 +22,39 @@ import org.apache.logging.log4j.Logger;
 
 @Mod(AutoLookMod.MOD_ID)
 public class AutoLookMod {
-    public static final String MOD_ID = "autolook";
-    private static final Logger LOGGER = LogManager.getLogger();
-    private static LockOnMode targetMode = LockOnMode.AllEntities;
+	public static final String MOD_ID = "autolook";
+	private static final Logger LOGGER = LogManager.getLogger();
+	private static LockOnMode targetMode = LockOnMode.AllEntities;
+	private static boolean autolock = false;
 
-    public static LockOnMode getTargetMode() {
-        return targetMode;
-    }
+	public static LockOnMode getTargetMode() {
+		return targetMode;
+	}
 
-    public static void setTargetMode(LockOnMode mode) {
-        targetMode = mode;
-    }
+	public static boolean isAutoLock() {
+		return autolock;
+	}
 
-    public AutoLookMod() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+	public static void changeAutoLock() {
+		autolock = !autolock;
+	}
+
+	public static void setTargetMode(LockOnMode mode) {
+		targetMode = mode;
+	}
+
+	public AutoLookMod() {
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(KeyBindings::register);
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new RenderEventHandler());
         MinecraftForge.EVENT_BUS.register(new KeyRecorder());
         MinecraftForge.EVENT_BUS.register(new TickEventHandler());
-        MinecraftForge.EVENT_BUS.register(new RenderEventHandler());
+		MinecraftForge.EVENT_BUS.register(new RenderEventHandler());
+		MinecraftForge.EVENT_BUS.register(new MouseRecorder());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
