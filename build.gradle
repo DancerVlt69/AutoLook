@@ -1,8 +1,9 @@
 buildscript {
     repositories {
-//        maven { url = 'https://files.minecraftforge.net/maven' }
-//        jcenter()
+//        maven { url = 'https://maven.minecraftforge.net/' }
+//        maven { url = 'https://maven.parchmentmc.org' }
 //        mavenCentral()
+//        jcenter()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
@@ -10,8 +11,12 @@ buildscript {
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle' version '1.+'
+plugins {
+    id 'net.minecraftforge.gradle' version '5.1+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+}
+
+// apply plugin:
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
