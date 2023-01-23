@@ -6,10 +6,7 @@ import com.alrexu.autolook.input.KeyBindings;
 import com.alrexu.autolook.input.KeyRecorder;
 import com.alrexu.autolook.input.MouseRecorder;
 import com.alrexu.autolook.logic.LockOnMode;
-import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -20,9 +17,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-@Mod(AutoLookMod.MOD_ID)
+@Mod(AutoLookMod.MODID)
 public class AutoLookMod {
-	public static final String MOD_ID = "autolook";
+	public static final String MODID = "autolook";
 	private static final Logger LOGGER = LogManager.getLogger();
 	private static LockOnMode targetMode = LockOnMode.AllEntities;
 	private static boolean autolock = false;
@@ -78,9 +75,8 @@ public class AutoLookMod {
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
-        @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
-        }
-    }
+        // @SubscribeEvent
+        // public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+		// register a new block here
+	}
 }

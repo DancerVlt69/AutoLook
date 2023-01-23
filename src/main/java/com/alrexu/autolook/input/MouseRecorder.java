@@ -1,7 +1,7 @@
 package com.alrexu.autolook.input;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.MouseHelper;
+import net.minecraft.client.MouseHandler;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -22,7 +22,7 @@ public class MouseRecorder {
 		private static final double THRESHOLD_OF_SHAKE_HORIZONTAL = 250;
 		private static final double THRESHOLD_OF_SHAKE_VERTICAL = 200;
 
-		private void record(MouseHelper mouse) {
+		private void record(MouseHandler mouse) {
 			oldXPos = xPos;
 			oldYPos = yPos;
 			xPos = mouse.xpos();
